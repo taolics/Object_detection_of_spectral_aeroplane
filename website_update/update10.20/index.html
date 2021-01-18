@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>高光谱图像目标检测</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url(Desert.jpg) no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+         
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+         
+        #loginDiv {
+            width: 37%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: rgba(75, 81, 95, 0.3);
+            box-shadow: 7px 7px 17px rgba(52, 56, 66, 0.5);
+            border-radius: 5px;
+        }
+         
+        #name_trip {
+            margin-left: 50px;
+            color: red;
+        }
+         
+        p {
+            margin-top: 30px;
+            margin-left: 120px;
+            color: #F3F5F7;
+        }
+         
+        input {
+            margin-left: 15px;
+            border-radius: 5px;
+            border-style: hidden;
+            height: 30px;
+            width: 140px;
+            background-color: rgba(216, 191, 216, 0.5);
+            outline: none;
+            color: #f0edf3;
+            padding-left: 10px;
+        }
+         
+        .button {
+            border-color: cornsilk;
+            background-color: rgba(100, 149, 237, .7);
+            color: #F3F5F7;
+            border-style: hidden;
+            border-radius: 5px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div id="loginDiv">
+        <form name="logreg"  method="post">
+			<h1 style="text-align: center;color: aliceblue;">高光谱图像目标检测</h1>
+        	<p>用户名：<input type="text" name="username" id="username"></p>
+        	<p>密码：<input type="password" name="password" id="password"></p>
+        	<div style="text-align: center; margin-top: 30px;">
+        		<input type="button" value="注册" onclick="regAction()">
+        		<input type="button" value="登录" onclick="logAction()">
+        		<input type="reset" value="重置" >
+        	</div>
+        </form>
+    </div>
+	
+	<script type="text/javascript">
+	function regAction(){
+	    document.logreg.action="register.php";
+	    document.logreg.submit();
+	}
+	
+	function logAction(){
+	    document.logreg.action="login.php";
+	    document.logreg.submit();
+	}
+		
+	</script>
+ 
+</body>
+</html>

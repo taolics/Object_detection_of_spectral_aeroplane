@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>下载图片</title>
+		<meta name="content-type"; charset="UTF-8">
+	</head>
+	<body> 
+	
+	
+	
+		<form name="ret"  method="get">
+        	<div style="text-align: center; margin-top: 30px;">
+        		<input type="button" value="点击预览" onclick="downAction()">
+        		<input type="button" value="继续上传" onclick="upAction()">
+        	</div>
+        </form>
+		
+		<script type="text/javascript">
+			function downAction(){
+				window.location.href = 'download/result.png';
+			}
+			function upAction(){
+				document.ret.action="upload.php";
+				document.ret.submit();
+			}
+			
+			
+		</script>
+
+</body>
+</html>

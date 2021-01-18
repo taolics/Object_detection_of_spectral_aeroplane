@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>图片预览</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        font-weight: 600;
+                        font-size: 15px;
+                }
+
+                a {
+                        text-decoration: none;
+                        color: black;
+                }
+
+                .w {
+                        width: 1200px;
+                        margin: 0 auto;
+                }
+
+                body {
+                        background-color: #f3f5f7;
+                }
+
+                .box1 {
+                        width: 800px;
+                        height: 500px;
+                        background-color: #f3f5f7;
+                        margin: 50px auto 20px auto;
+                }
+
+                .box2 {
+                        width: 800px;
+                        height: 50px;
+                        background-color: #f3f5f7;
+                        margin: 0 auto;
+                        line-height: 50px;
+                        font-size: 15px;
+                }
+
+                .box2 form {
+                        padding-left: 220px;
+                }
+
+                .box2 a {
+                        
+                        font-size: 20px;
+                }
+        </style>
+</head>
+
+<body>
+        <div class="box1">
+                <img id="img0" style="width: 800px; height: 500px; " src="lisa.jpeg">
+        </div>
+        
+        <div class="box2">
+                <form  action="upload.php" method="post"  enctype="multipart/form-data">
+                        <input type="file" name="file" id="file"  />
+                        <input name="submit" type="submit" value="上传" />
+                        
+                </form>
+                <a href="20200502.png" download="123.png" class="表格" style="margin: 300px;">点击下载</a>
+
+        </div>
+        
+        
+
+
+        <script>
+                $("#file").change(function () {
+                        var objUrl = getObjectURL(this.files[0]);//获取文件信息  
+                        console.log("objUrl = " + objUrl);
+                        if (objUrl) {
+                                $("#img0").attr("src", objUrl);
+                        }
+                });
+                function getObjectURL(file) {
+                        var url = null;
+                        if (window.createObjectURL != undefined) {
+                                url = window.createObjectURL(file);
+                        } else if (window.URL != undefined) { // mozilla(firefox)  
+                                url = window.URL.createObjectURL(file);
+                        } else if (window.webkitURL != undefined) { // webkit or chrome  
+                                url = window.webkitURL.createObjectURL(file);
+                        }
+                        return url;
+                }  
+        </script>
+</body>
+
+</html>
